@@ -2,7 +2,7 @@
   <div class="page-wrapper">
     <h1>
       Products in: {{ selectedCategory }}
-      <span v-if="mergedItems?.length">({{ mergedItems.length }})</span>
+      <span v-if="filteredProducts?.length">({{ filteredProducts.length }})</span>
     </h1>
 
     <ProductList v-if="mergedItems?.length" :products="mergedItems" />
