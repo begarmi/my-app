@@ -16,7 +16,7 @@
     max-height: 440px;
     min-height: 440px;
     overflow: auto;
-    border: 1px solid #ccc;
+    border: 1px solid red;
     padding: 1rem;
     border-radius: 6px;
     background-color: #f9f9f9;
