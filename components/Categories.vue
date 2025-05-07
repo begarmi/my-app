@@ -1,5 +1,11 @@
 <script setup>
-const { data: categories } = await useFetch('/api/categories')
+
+defineProps({
+  categories: {
+    type: Array,
+    required: true
+  }
+})
 const router = useRouter()
 
 function handleSelect(id) {

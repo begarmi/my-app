@@ -6,12 +6,18 @@
     <NuxtLink to="/" class="menu-link">Home</NuxtLink>
 
     <Sidebar :visible="showSidebar" @close="showSidebar = false">
-      <Categories />
+      <Categories :categories="categories" />
     </Sidebar>
   </nav>
 </template>
 
 <script setup>
+defineProps({
+  categories: {
+    type: Array,
+    required: true
+  }
+})
 import { ref } from 'vue'
 import { useClickOutside } from '~/composables/useClickOutside'
 import Sidebar from './Sidebar.vue'

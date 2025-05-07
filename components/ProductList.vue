@@ -1,6 +1,11 @@
 <template>
   <div v-if="products?.length" class="product-grid">
-    <NuxtLink v-for="product in products" :key="product.id" :to="`/products/${product.id}`" class="card-link">
+    <NuxtLink
+      v-for="product in products"
+      :key="product.id"
+      :to="product._isPromo ? '/promotions/promotionId' :`/products/${product.id}`"
+      class="card-link"
+    >
       <PromoCard v-if="product._isPromo" :product="product" />
       <ProductCard v-else :product="product" />
     </NuxtLink>
