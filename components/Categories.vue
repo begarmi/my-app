@@ -1,5 +1,5 @@
 <script setup>
-
+const selectedCategory = useSelectedCategory()
 defineProps({
   categories: {
     type: Array,
@@ -20,6 +20,7 @@ function handleSelect(id) {
         v-for="cat in categories"
         :key="cat.id"
         :category="cat"
+        :selectedCategory="selectedCategory"
         @select="handleSelect"
       />
     </div>

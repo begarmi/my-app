@@ -4,6 +4,7 @@
       <NuxtLink
         :to="`/products/category/${category.id}`"
         class="category-link"
+        :class="{ 'category-selected': category.id === selectedCategory }"
         @click="$emit('select', category.id)"
       >
         {{ category.name.en }}
@@ -13,23 +14,25 @@
         v-for="sub in category.categories || []"
         :key="sub.id"
         :category="sub"
+        :selectedCategory="selectedCategory"
         @select="$emit('select', $event)"
       />
     </li>
   </ul>
 </template>
 
+
 <script setup>
-defineProps({ category: Object })
+defineProps({ category: Object, selectedCategory: String })
 defineEmits(['select'])
 </script>
 
 
 <style scoped>
 .category-tree {
-  padding-left: 1rem; /* less indentation */
+  padding-left: 1rem;
   margin: 0;
-  list-style-type: none; /* cleaner look */
+  list-style-type: none;
 }
 
 .category-tree > li {
@@ -43,6 +46,10 @@ defineEmits(['select'])
   font-size: 0.95rem;
   display: inline-block;
   transition: color 0.2s ease;
+}
+
+.category-selected {
+  font-weight: bold;
 }
 
 .category-link:hover {
