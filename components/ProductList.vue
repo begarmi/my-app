@@ -3,7 +3,7 @@
     <NuxtLink
       v-for="product in products"
       :key="product.id"
-      :to="product._isPromo ? '/promotions/promotionId' :`/products/${product.id}`"
+      :to="product._isPromo ? product.link :`/products/${product.id}`"
       class="card-link"
     >
       <PromoCard v-if="product._isPromo" :product="product" />
