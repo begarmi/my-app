@@ -14,7 +14,6 @@
 
 <script setup>
 import { useRoute } from 'vue-router'
-import ProductCard from '~/components/ProductCard.vue'
 
 const route = useRoute()
 
